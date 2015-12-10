@@ -7,7 +7,7 @@ Since [announcing the Interest Graph](http://blog.getprismatic.com/interest-grap
 
 Today, we’re excited to release the first of many more edges we’ll be adding to the Interest Graph: related topics.
 <center>
-<img src="/content/images/2015/02/image_0.png" style="width:30%;">
+<img src="{{site.baseurl}}/content/images/2015/02/image_0.png" style="width:30%;">
 </center>
 
 With this new endpoint, you can query for topics related to a given query topic. For example, querying for *Cats* (id 809)
@@ -34,7 +34,7 @@ Similar topics can be used to automatically increase the pool of topics that are
 
 The similarity between topics can be lifted to compute a similarity between other entities. For example, if two articles are tagged with different sets of topics, a simple measure of topic-overlap might suggest that the articles are completely different. Measuring similarity by first expanding the set of topics on an article can detect similar articles that would otherwise be missed. In the example below, we can detect that article A is similar to article B because they both are indirectly talking about *Pets*.
 
-![image alt text](/content/images/2015/02/image_1.png)
+![image alt text]({{site.baseurl}}/content/images/2015/02/image_1.png)
 
 If you have other content labelled with topics -- such as advertisements -- you can use the same similarity expansion to find a broader set of articles for which the advertisement is relevant. Beyond simply matching an article or ad with a given article, you can also match users with other users who have similar sets of favorited interests.
 

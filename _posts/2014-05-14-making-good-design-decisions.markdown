@@ -106,11 +106,11 @@ When we began exploring redesigning the grid view to be a list, we wanted to cre
 
 So we took this:
 
-![](/content/images/2014/May/preview-grid-1.jpg)
+![]({{site.baseurl}}/content/images/2014/May/preview-grid-1.jpg)
 
 And hacked this together from the existing code:
 
-![](/content/images/2014/May/preview-list-1.jpg)
+![]({{site.baseurl}}/content/images/2014/May/preview-list-1.jpg)
 
 Within a day, this small incremental list view redesign gave us sufficient evidence that investing in this path was a good move. This is a great example of how design and engineering working together in clever ways when taking implementation considerations into account.
 
@@ -132,7 +132,7 @@ Once we’re going from the early design goals and inputs to getting started, we
 
 We often kick off a new direction as a team with short sketching sprints to generate ideas as broadly as we can. We do a few 10–15 minute sketching sessions with rounds of discussion in between. The goal is generating as many ideas as we can, exploring divergent themes and covering as broad a territory as possible. We ignore constraints to ensure we’re going as broad as we can.  During the discussion between each sketching sprint, someone takes notes, including noting the best concepts in each round of discussion. Then, we discuss them all as a group and narrow down to a few options we want to wireframe.
 
-![](/content/images/2014/May/sketches-1.jpg)
+![]({{site.baseurl}}/content/images/2014/May/sketches-1.jpg)
 
 **Wireframes**
 
@@ -140,14 +140,14 @@ After we choose a few directions that best satisfy our goals, we start to explor
 
 We’re big fans of ‘exploration maps’ - infinite canvas artboards in Sketch. When we’re in this stage of exploration, we simply take the artboard we’re designing in and copy it to the right as we iterate, leaving a quick note about the reasoning behind each step. This way, we can see a clear line of reasoning as to why certain elements are styled a certain way or why they’re placed where they are.
 
-![](/content/images/2014/May/exploration-map-1.jpg)
+![]({{site.baseurl}}/content/images/2014/May/exploration-map-1.jpg)
 
 
 **Visual system**
 
 After a round of wireframe critique with design and engineering, we start setting up the visual libraries we’ll need to explore our options at a detailed pixel level. We set up the grid, start setting up type size and scale and gather any design patterns we’ve previously designed that apply to the design we’re working on. We value reuse over redesign - we always try to use existing UI elements from other places in the product, not only for consistency, but for ease of implementation. As we’re narrowing in on the details we bring in front-end engineers to talk more in-depth about how to implement the design. 
 
-![](/content/images/2014/May/grid-1.png)
+![]({{site.baseurl}}/content/images/2014/May/grid-1.png)
 
 **Pixel Detail**
 
@@ -155,7 +155,7 @@ We use Sketch for both wireframe explorations and pixel detail, which saves us s
 
 We also practice what we call ‘universal design’; designing for all supported screen sizes at once. A separate Sketch file uses multiples artboards to show how a screen will change responsively for each supported screen size range.
 
-![](/content/images/2014/May/universal-design-1.jpg)
+![]({{site.baseurl}}/content/images/2014/May/universal-design-1.jpg)
 
 **Conclusion**
 

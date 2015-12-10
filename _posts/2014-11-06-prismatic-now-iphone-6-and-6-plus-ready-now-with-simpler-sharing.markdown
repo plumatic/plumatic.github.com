@@ -9,7 +9,7 @@ We’ve updated the design to look great on the iPhone 6 and iPhone 6 Plus. The 
 
 We’ve also heard your feedback on the need for simple sharing to outside social networks. With this update, it's simpler than ever! Share your favorite stories with your friends through Facebook, Twitter, email or any other app on your phone with two easy clicks.
 
-![](/content/images/2014/11/IMG_6727-1.PNG)
+![]({{site.baseurl}}/content/images/2014/11/IMG_6727-1.PNG)
 
 Lastly, we’ve improved the sign up experience for new users, making it faster and easier, so now’s the best time for you to finally get all your friends on Prismatic. (Send them [here](http://getprismatic.com/signup)) 
 

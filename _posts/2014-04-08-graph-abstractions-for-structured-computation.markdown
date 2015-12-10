@@ -33,7 +33,7 @@ In this post, we want to focus more on how Graph can be used to reduce complexit
 
 Jason Wolfe's [Strange Loop talk](http://www.infoq.com/presentations/Graph-Clojure-Prismatic), [slides](https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Wolfe-Graph.pdf?raw=true) and subsequent [blog post](http://blog.getprismatic.com/blog/2012/10/1/prismatics-graph-at-strange-loop) last year covered two concrete real-world examples of Graph from our codebase: composing production services, and generating personalized newsfeeds in real time.
 
-![](/content/images/2014/10/graph_ugly_graphs-1.png)
+![]({{site.baseurl}}/content/images/2014/10/graph_ugly_graphs-1.png)
 
 
 

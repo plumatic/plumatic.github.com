@@ -3,7 +3,7 @@ layout: post
 title: Prismatic Partners with Bridge
 date: 2014-09-22 07:52:04.000000000 -07:00
 ---
-![](/content/images/2014/Sep/rsz_fk1a6809_1.jpg)
+![]({{site.baseurl}}/content/images/2014/Sep/rsz_fk1a6809_1.jpg)
 
 ###Apply to Bridge, work on Prismatic
 

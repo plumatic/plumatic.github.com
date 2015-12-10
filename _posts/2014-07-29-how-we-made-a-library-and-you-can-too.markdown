@@ -4,7 +4,7 @@ title: How we turned our disorganized book collection into a library, and how yo
   can too
 date: 2014-07-29 14:58:26.000000000 -07:00
 ---
-![](/content/images/2014/Jul/photo--21-.JPG)
+![]({{site.baseurl}}/content/images/2014/Jul/photo--21-.JPG)
 
 *Part 1 of 2. Stay tuned for Part 2 as our library grows, finds a home, and we implement experimental punishments for late book-returners.*
 
@@ -15,7 +15,7 @@ We always felt it gave the office a charming "lived in, intellectual" vibe.
 
 But at a certain point (for example, when you really need to find, "Designing Interfaces for Cat Owners", but it's hidden under a stack of books in a closet), this otherwise flawless system breaks down. Organizing our company book collection had always been on our to-do list, but it took our own Renegade Librarian [Carolyn](http://www.twitter.com/carolynlimadeo) taking the reigns to finally get it done.
 
-![](/content/images/2014/Jul/carolyn.png)
+![]({{site.baseurl}}/content/images/2014/Jul/carolyn.png)
 <p style='text-align: center;'>Carolyn, Interaction designer and Librarian Extraordinairian</p>
 
 Says Carolyn:
@@ -23,16 +23,16 @@ Says Carolyn:
 
 So Carolyn set out, with help from Lucy and Gina, to help make the undiscoverable discoverable.
 
-![](/content/images/2014/Jul/photo-1--5-.JPG)
+![]({{site.baseurl}}/content/images/2014/Jul/photo-1--5-.JPG)
 <p style='text-align: center;'>Scanning books into the system</p>
 
 They started by collecting all the books from every corner of the office. Using smartphones, they scanned each book into [Goodreads](http://www.goodreads.com/), and then exported the data into [LibraryThing](http://www.librarything.com).
 
-![](/content/images/2014/Jul/photo-4.JPG)
+![]({{site.baseurl}}/content/images/2014/Jul/photo-4.JPG)
 
 >"I love LibraryThing, as they are an awesome open-source cataloging software that makes it really easy for people to catalog and organize their own books. I've always wanted to use them, so this seemed like the perfect fit."
 
-![](/content/images/2014/Jul/photo-3.JPG)
+![]({{site.baseurl}}/content/images/2014/Jul/photo-3.JPG)
 <p style='text-align: center;'>Lucy gets in on the action</p>
 
 Once uploaded, they assigned tags to all 307 books and sorted them into nine different higher-level categories. These tags and categories will help everyone on the team to browse, search and discover books. 
@@ -50,9 +50,9 @@ Itching to set up your own library? Our house librarian encourages it:
 
 >"Yeah! People can totally make their own personal libraries and they definitely should! It's a great way to share what you have in your collection with friends and family as well as this awesome quantified self moment, where you can look at your full collection and see what you are interested in."
 
-![](/content/images/2014/Jul/photo--19-.JPG)
+![]({{site.baseurl}}/content/images/2014/Jul/photo--19-.JPG)
 <p style='text-align: center;'>"The Essential Mahamudra is the real shit" -Bradford Cross, Prismatic CEO</p>
-![](/content/images/2014/Jul/photo-2--5-.JPG)
+![]({{site.baseurl}}/content/images/2014/Jul/photo-2--5-.JPG)
 <p style='text-align: center;'>Making your own library can be fun! Who knows what surprises you'll uncover in your very own book collection!</p>
 
 

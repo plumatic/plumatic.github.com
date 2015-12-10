@@ -3,7 +3,7 @@ layout: post
 title: Everything we wish we’d known before building our first Android app
 date: 2014-12-11 09:08:43.000000000 -08:00
 ---
-![](/content/images/2014/12/Screen-Shot-2014-12-11-at-9-38-00-AM.png)
+![]({{site.baseurl}}/content/images/2014/12/Screen-Shot-2014-12-11-at-9-38-00-AM.png)
 
 We just released our first native Android Prismatic app! Download it [here](https://play.google.com/store/apps/details?id=com.Prismatic.android).
 

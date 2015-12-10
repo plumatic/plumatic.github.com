@@ -11,11 +11,11 @@ For the purposes of this post, when we talk about a grid, we are referring to mu
 
 Here’s what web looked like before embarking on the redesign.
 
-![](/content/images/2014/Apr/old-web.jpg)
+![]({{site.baseurl}}/content/images/2014/Apr/old-web.jpg)
 
 Since we wanted to experiment without forcing all our existing customers to live through a rapid and peculiar sequence of changes, we put the new grid design up on preview.getprismatic.com
 
-![](/content/images/2014/Apr/preview-grid.png)
+![]({{site.baseurl}}/content/images/2014/Apr/preview-grid.png)
 
 Teehan+Lax has [written up](http://www.teehanlax.com/story/prismatic/) the detailed design process that lead to all aspects of the grid design, nav and other screens in Prismatic, so we won’t do that here.
 
@@ -41,11 +41,11 @@ Before investing time in designing a universal list layout for all screen sizes,
 
 We’d like to do this as quickly and cheaply as possible, isolating the change to ensure we aren’t confounding variables by introducing too many concurrent design changes. Preview web’s grid view had three grid units per row, so if we merged the items in each row to form a three column list item, we could test a list view. This would be a mediocre list view design, but if it outperformed the grid, then hopefully a more thoughtfully designed list view would as well.
 
-![](/content/images/2014/Apr/preview-list.png)
+![]({{site.baseurl}}/content/images/2014/Apr/preview-list.png)
 
 Before looking into the methodology and results, recall during this testing phase we have three versions of the web product running in parallel: 1) the old list view (old web), 2) the preview grid view (preview grid), and 3) the preview list view (preview list). Preview grid is the version of Prismatic we worked on with Teehan + Lax.
 
-![](/content/images/2014/Apr/comparison.jpg)
+![]({{site.baseurl}}/content/images/2014/Apr/comparison.jpg)
 
 Importantly, there was a stalwart group of Prismatic users continuing to use old web, entrenched in their desire for a list view. We wanted to test how the preview list design performed against both users of preview grid and users of old web.
 
@@ -84,7 +84,7 @@ Our first step was to introduce the preview list design to 20% of users on previ
 
 To elicit feedback from old web users on preview list we emailed a sample of users who had logged into old web 15 of the previous 30 days. We received 68 responses to our survey indicating that more than half of the stalwart old web users would now be willing to switch to this new list view.
 
-![](/content/images/2014/Apr/survey-screenshot-1.png)
+![]({{site.baseurl}}/content/images/2014/Apr/survey-screenshot-1.png)
 
 To our surprise, when evaluating the numbers from the 20% of users on preview grid who had been switched over to preview list, the results were significantly better. We wondered if this might be due to a novelty bias, and so we waited between rolling each new cohort on preview grid into preview list. We increased the proportion of users on preview list by around 20% every week or two until all users were on preview list. The performance gains held stable over many weeks and remain stable today.
 
@@ -141,28 +141,28 @@ Given the surveys, metrics, and our past feed design experience, we laid out our
 
 In the past we’ve made the mistake of designing one platform at a time, which yields excessive churn as you discover new things on each platform and loop back to redesign the previous platforms - designing universally with screen characteristics rather than ‘mobile first’ was critical for us this time around. Mobile first creates churn, now we design ‘universal first,’ aiming to develop modular systems that maximize the experience on each screen, rather that churning as we jump from to screen to screen always yearning to redesign the last screen after finishing the current screen. Here’s a look at the results of this process.
 
-![](/content/images/2014/Apr/prior-comparison-2.jpg)
+![]({{site.baseurl}}/content/images/2014/Apr/prior-comparison-2.jpg)
 
 This time around, we’ve designed a system that works well on all screens. We looked at a few important points. Designing for Android, which means things need to be flexible within ranges of screen sizes due to the vast number of screen dimensions - even if you have some discrete settings, you can’t make everything absolute as is the case with iOS. Designing for mobile, especially tablets, implies thinking about both portrait and landscape, and you hopefully want to think about reusing portrait layouts on larger screens as landscape layouts on smaller screens. We had to create unique layouts for phone portrait and phone landscape, but we were able to reuse web small as tablet landscape. So in the end, we have 5 discrete settings; phone portrait, phone landscape, tablet portrait, tablet landscape / web small, web large. The only setting that differences in content layout rules is that on phone portrait, we do not allow two columns, so images can not appear to the right of body copy.
 
 You can see the first iteration universal feed layout in production [here](http://preview.getprismatic.com), and a look at how it responds to different screen sizes below.
 
-![](/content/images/2014/Apr/tablet-mobile-feed.png)
-![](/content/images/2014/Apr/wideweb-laptop.png)
+![]({{site.baseurl}}/content/images/2014/Apr/tablet-mobile-feed.png)
+![]({{site.baseurl}}/content/images/2014/Apr/wideweb-laptop.png)
 
 We also intended to design our universal feed to accommodate what we can interstitial and rich remove story units. These are examples of non-article story units that can cause some problems in some settings, but work great in our new list.
 
 Interstitials are a way of visually calling attention to a story unit other than a typical article type, for example, if we want to suggest some topics we think you’ll be especially interested in. We want to ensure that we design a feed system with interstitials in mind. The great thing about list layouts are their inherent row-based flexibility. Since there is nothing to the left or right of each unit to align with, it is hard for the system to fall apart when you introduce new components like interstitials.
 
-![](/content/images/2014/Apr/interstitial.png)
+![]({{site.baseurl}}/content/images/2014/Apr/interstitial.png)
 
 Rich remove is a feature that allows customers to help us improve the quality of results they get. When a customer dislikes a story with thumbs-down, we can overlay the ‘rich remove’ model on the story, which allows the customer to block topics, publishers, or people, or tag a story as having certain undesirable attributes.
 
-![](/content/images/2014/Apr/rich-remove.jpg)
+![]({{site.baseurl}}/content/images/2014/Apr/rich-remove.jpg)
 
 With our universal list accommodating all screens and story unit types, we were ready to test it out against our recent feed design for [iOS](https://itunes.apple.com/us/app/prismatic-always-interesting/id551206444) that we shipped in late December 2013. We decided to test this on an iPhone against our new universal feed layout, also on an iPhone. We did a round of internal critique with everyone in our company, comparing our latest iOS feed design with our new universal feed design. Then we did a think-aloud study to see what people thought upon seeing both our latest iOS feed and new universal feed design. 
 
-![](/content/images/2014/Apr/current-vs-new-feed.png)
+![]({{site.baseurl}}/content/images/2014/Apr/current-vs-new-feed.png)
 
 The feedback from the internal critique was that the new feed looks better aesthetically, the topic tags are cool, the bigger images are great, the separation of stories was unclear, and some of the explains were unclear.
 
@@ -174,11 +174,11 @@ The next biggest issue was confusion with topic tags and explains, so we designe
 
 *Topic Tags*
 
-![](/content/images/2014/Apr/tags.jpg)
+![]({{site.baseurl}}/content/images/2014/Apr/tags.jpg)
 
 *Explains*
 
-![](/content/images/2014/Apr/explains.png)
+![]({{site.baseurl}}/content/images/2014/Apr/explains.png)
 
 After generating a few options, we surveyed the team to get feedback on the design of topic tags and explains. We found unanimous preference for adding a check next to the topics in tags to show you follow them as opposed to changing the colors of tags or adding the stroke border. Explains were generally well received, but we found some confusion with the ‘hot’ explains, as well as authority explains.
 
@@ -188,4 +188,4 @@ We decided to ship with the check model of indicating following on topic tags, a
 
 We’re happy with where [we’ve ended up with the new feed layouts](http://preview.getprismatic.com). It brings together the best of what we’ve done across different generations of design on both web and [iOS](https://itunes.apple.com/us/app/prismatic-always-interesting/id551206444). The design is fully responsive and works great on mobile. There are a number of issues, but we know we’re following a path that’s validated by metrics and user studies, and we think this is a foundation we can build upon in small increments rather than big redesigns. Designing a simpler and more universal system can be better for you, and better for your customers, so move carefully and with data before jumping into big redesigns with more complex layouts.
 
-![](/content/images/2014/Apr/laptop.jpg)
+![]({{site.baseurl}}/content/images/2014/Apr/laptop.jpg)

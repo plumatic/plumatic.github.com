@@ -15,12 +15,12 @@ What is it?</p>
 
 ###<p style='text-align: center;'>[Prismatic for Android]((https://play.google.com/store/apps/details?id=com.Prismatic.android))
 
-![](/content/images/2014/11/Screen-Shot-2014-11-19-at-9-12-16-AM.png)
+![]({{site.baseurl}}/content/images/2014/11/Screen-Shot-2014-11-19-at-9-12-16-AM.png)
 
 Thanks to a lot of hard work by our engineers, designers and beta testers, Prismatic for Android is now ready for showtime, and we’re so excited to share it with you.
 
-![](/content/images/2014/11/Screen-Shot-2014-11-19-at-9-27-19-AM.png)
-![](/content/images/2014/11/Screen-Shot-2014-11-19-at-9-28-25-AM.png)
+![]({{site.baseurl}}/content/images/2014/11/Screen-Shot-2014-11-19-at-9-27-19-AM.png)
+![]({{site.baseurl}}/content/images/2014/11/Screen-Shot-2014-11-19-at-9-28-25-AM.png)
 
 Now you can take Prismatic with you, on any device.
 

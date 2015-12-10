@@ -21,7 +21,7 @@ By automatically tagging your collection of articles with interests, you introdu
 
 Readers of your articles can more easily find the content that they care about by narrowing in on articles tagged with a particular interest. A lot of blogs already tag their posts with interests so readers can quickly know what an article is about, and to quickly find other articles from the same interest. For example, take a look at the the Photography and Surreal tags at the top of the following post:
 
-![](/content/images/2015/02/image00.png)
+![]({{site.baseurl}}/content/images/2015/02/image00.png)
 
 Traditionally, these articles are manually tagged with interests resulting in a non-canonical, open class of tags, which makes searching for them hard. Having the interest graph automatically tag posts helps maintain a standard that keeps things organized and lends itself well to searching.
 
@@ -31,7 +31,7 @@ Most articles lie at the intersection of multiple interests; for instance, the a
 
 You can encourage your readers to explore by showing related articles (e.g. in the sidebar); interest tags make automatically selecting related articles easy. There are various similarity metrics that you can use to find related docs to a given doc. For example, treating the interests on two separate articles as sets A and B, you can use the [Jaccard Index](http://en.wikipedia.org/wiki/Jaccard_index) to measure the similarity between the two articles:
 
-![](/content/images/2015/02/Screen-Shot-2015-02-04-at-10-44-20-AM-1.png)
+![]({{site.baseurl}}/content/images/2015/02/Screen-Shot-2015-02-04-at-10-44-20-AM-1.png)
 
 Computing similarity of articles by comparing their interest tags is less susceptible to noise and can be significantly more efficient than computing similarity based on the words in the articles.
 
@@ -41,7 +41,7 @@ More generally, the set of interest tags serve as stable categories for finding 
 
 Interests provide a means to deeply model user preferences. At Prismatic, we model our users’ interests by analyzing how they interact with documents. To get a sense of how article interactions reflect a user’s interests, take a look at some of the top interests we automatically extracted from the links shared on the following celebrities’ twitter accounts:
 
-![](/content/images/2015/02/Screen-Shot-2015-02-04-at-10-06-40-AM.png)
+![]({{site.baseurl}}/content/images/2015/02/Screen-Shot-2015-02-04-at-10-06-40-AM.png)
 
 **Much More...**
 

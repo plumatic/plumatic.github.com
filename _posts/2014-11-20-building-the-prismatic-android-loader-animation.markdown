@@ -6,7 +6,7 @@ date: 2014-11-20 09:38:35.000000000 -08:00
 ---
 
 
-![](/content/images/2014/11/loader2.jpeg)
+![]({{site.baseurl}}/content/images/2014/11/loader2.jpeg)
 
 We‘d been hard at work on our Android product for the past few months and the time had come to start adding some polish. We decided that we had enough time to squeeze in some animations (other than the defaults) for the product. I have always had a great interest in animation and prototyping using quartz composer and After Effects. 
 

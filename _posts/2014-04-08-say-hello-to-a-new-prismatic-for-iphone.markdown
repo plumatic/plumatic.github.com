@@ -3,7 +3,7 @@ layout: post
 title: Say Hello to a New Prismatic for iPhone
 date: 2014-04-08 11:49:14.000000000 -07:00
 ---
-![](/content/images/2014/Apr/img.png)
+![]({{site.baseurl}}/content/images/2014/Apr/img.png)
 
 Today, we’re happy to show you a new version of Prismatic for iPhone that we've been working on for the last few months.
 

@@ -14,7 +14,7 @@ Before today, the Interest Graph has focused on analyzing input content. From a 
           <th>Interest Graph</th>
     </tr>
     <tr>
-          <td><img src="/content/images/2015/03/image_0-1.png"></td>
+          <td><img src="{{site.baseurl}}/content/images/2015/03/image_0-1.png"></td>
     </tr>
 </table>
 
@@ -69,7 +69,7 @@ Here is an example JSON response from the recent URLs endpoint:
     <td>JSON Response for URLs tagged with Machine Learning</td>
   </tr>
   <tr>
-    <td><img src="/content/images/2015/03/Screen-Shot-2015-03-30-at-2-42-31-PM.png"></td>
+    <td><img src="{{site.baseurl}}/content/images/2015/03/Screen-Shot-2015-03-30-at-2-42-31-PM.png"></td>
   </tr>
 </table>
 

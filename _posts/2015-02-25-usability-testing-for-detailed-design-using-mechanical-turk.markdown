@@ -11,11 +11,11 @@ To help with this problem, we started exploring remote testing as a way of getti
 
 The home feed is where users spend the majority of their time on Prismatic. The proposed home feed below is the result of lessons learned from previous designs and explorations from our internal hack week. We decided to test our current production iOS home feed against the proposed home feed with some in-person interviews.
 
-![image alt text](/content/images/2015/02/image_0--1-.png)
+![image alt text]({{site.baseurl}}/content/images/2015/02/image_0--1-.png)
 
 After a round of in-person interviews we found a number of issues, the largest being difficulty differentiating among stories in the feed - an important factor in making the feed easy to scan. Three story units were prone to confusion: the full bleed image unit, gallery unit, and comment unit.
 
-![image alt text](/content/images/2015/02/image_1-1.png)
+![image alt text]({{site.baseurl}}/content/images/2015/02/image_1-1.png)
 
 We had done our initial in-person testing with static mockups without randomizing the order of different types of story units, so it’s possible the confusion could have been caused by the specific order in which the story units appeared. This is especially problematic because comment units always appeared under full bleed image with action overlay units. We’d designed a poor experiment and now had to determine a way to disambiguate and hone in on the real problems that needed to be redesigned.
 
@@ -37,11 +37,11 @@ To isolate issues associated with the screenshot of the NYT page from the rest o
 
 The screenshot below shows the prompt turkers were asked to respond to.
 
-![image alt text](/content/images/2015/02/image_2.jpg)
+![image alt text]({{site.baseurl}}/content/images/2015/02/image_2.jpg)
 
 After a couple hours, we had 52 people complete the screener. Below is a heat map summarizing the results of the pilot screener.
 
-![image alt text](/content/images/2015/02/image_3.png)
+![image alt text]({{site.baseurl}}/content/images/2015/02/image_3.png)
 
 50% of turkers responded correctly, clicking within the region we specified around the comments link for the article. Of the incorrect responses, 25% of clicked within the article unit, mostly around the article title.
 
@@ -53,17 +53,17 @@ The most important lesson we learned from launching the pilot screener is to exp
 
 As mentioned above, we had 3 story units in particular we wanted to test: full bleed image unit, gallery unit, and comment unit. In order to create the variations, we systematically altered the story unit’s side-margin (margin to the left and right of a story) and story action placement (whether the actions were overlaid on the story or placed below). As an example, the four variations of the gallery story unit are below.
 
-![image alt text](/content/images/2015/02/image_4--1-.png)
+![image alt text]({{site.baseurl}}/content/images/2015/02/image_4--1-.png)
 
 We also wanted to test whether order placement was confusing. We have five total story units: the three previously mentioned (full image, gallery and comment), in addition to a text only unit and text-and-photo unit. The image below shows the ‘side margin-actions below’ gallery variation atop all 5 story units.
 
-![image alt text](/content/images/2015/02/image_5.png)
+![image alt text]({{site.baseurl}}/content/images/2015/02/image_5.png)
 
 To test the gallery unit in all cases, we would have to test all four side margin and action placement variations atop all 5 story units, leading to twenty variations. We had twenty more variations for the full image unit and ten for the comment unit leading to the fifty total variations.
 
 For each of the configurations we tested, we showed the user a screenshot of the story unit in a feed between two other stories, and gave the user a task related to that story unit. For example, for the comment story unit, we showed the following question and screenshot:
 
-![image alt text](/content/images/2015/02/image_6.png)
+![image alt text]({{site.baseurl}}/content/images/2015/02/image_6.png)
 
 In order to reduce cognitive load, get faster results, and prevent bias, we randomly presented each user with only one feed variation and randomized the order of the screener question and feed question.
 
@@ -73,7 +73,7 @@ The visualization below, laid out as a matrix, presents our results for the gall
 
 The columns represent the variations in side-margin and action overlay, while each row is a different story unit that the gallery variation is presented atop of. Each cell in the matrix placed a gallery variation above different types of content. We were interested in seeing if users correctly associated the comment section with the gallery above. The percentage under each of the 20 permutations represents the percent of people that clicked in the correct region, with the ‘n’ being the number of people who were presented with that variation in the survey. And finally, the large percentages at the bottom of each column are an average of the ‘success’ rates for the side margin/action placement permutation when paired with each of the story units. 
 
-![image alt text](/content/images/2015/02/image_7.png)
+![image alt text]({{site.baseurl}}/content/images/2015/02/image_7.png)
 
 The ‘side-margin actions-outside’ variation of the gallery unit was most successful, with 75% of respondents clicking the correct area. In general, we found margin and actions below the image yielded greater usability across all variations. You can see this design [in production](http://preview.getprismatic.com/news/home).
 

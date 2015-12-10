@@ -11,7 +11,7 @@ And if you're exited about working with us to release some great (soon to be) op
 
 Software engineering is very important to us at Prismatic.  We've written about our fondness for [fine-grained, composable abstractions (FCAs)][swe].  However, in a number of our real systems, we've relentessly refactored and modularized according to these principles, but still found ourselves left with complex top-level compositions like these:   
 
-![](/content/images/2014/10/graph_ugly_graphs.png)
+![]({{site.baseurl}}/content/images/2014/10/graph_ugly_graphs.png)
 
 
 At left is our production API service, and at right is our real-time newsfeed builder pipeline.  As you can see, both are large networks of many components connected in complex webs of dependencies.
@@ -36,7 +36,7 @@ Or, suppose that we want to monitor the individual sub-computations in this func
 
 The basic point is that using large `let` statements to describe complex compositions can lead to verbose code that is brittle and difficult to debug, test and monitor.  The core issue is that while as programmers we can see the individual components and their relationships, the rest of our code and tooling does not have access to this information because it is locked up inside an *opaque* function.  
 
-![](/content/images/2014/10/graph_stats_graph.png)
+![]({{site.baseurl}}/content/images/2014/10/graph_stats_graph.png)
 
 For example, this graph shows the nodes and data flow in our `stats` function, which is invisible from the outside (i.e., without examining the source code).  Graph is about making this structure explicit.
 

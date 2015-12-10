@@ -16,7 +16,7 @@ Specifically, (like most software engineering teams) our primary engineering goa
 
 In our experience developing web, iOS, and backend applications, we’ve found that much (if not most) coupling, complexity, and bugs are a direct result of managing changes to application state.  With [ClojureScript](https://github.com/clojure/clojurescript) and [Om](https://github.com/swannodette/om) (a ClojureScript interface to [React](http://facebook.github.io/react/)), we’ve finally found an architecture that shoulders most of this burden for us on the web.  Two months ago, we rewrote our [webapp](http://getprismatic.com/topic/Programming) in this architecture, and it’s been a huge boost to our productivity while maintaining snappy runtime performance.
 
-![](/content/images/2014/Jun/Slice-1.png)
+![]({{site.baseurl}}/content/images/2014/Jun/Slice-1.png)
 
 This new codebase weighs in at just under 5k lines of ClojureScript (excluding libraries), about five times smaller than our previous ClojureScript codebase.  Of course, size isn’t everything.  Every member of our backend team has made significant contributions to the new codebase, which says a lot about its readability and accessibility.  
 
@@ -66,11 +66,11 @@ A common pitfall of web development is the often complicated interplay between t
 
 In a naive solution to this problem, each component that can update a piece of data must know about each other component concerned with this data, resulting in the following architecture that scales quadratically with the number of components:
 
-![](/content/images/2014/Jun/point-to-point.gif)
+![]({{site.baseurl}}/content/images/2014/Jun/point-to-point.gif)
 
 A less error-prone solution is a hub-and-spoke architecture that maintains a single canonical representation of each piece of state, and all components that modify or represent this state communicate directly with the central hub:
 
-![](/content/images/2014/Jun/hub-and-spoke--1-.gif)
+![]({{site.baseurl}}/content/images/2014/Jun/hub-and-spoke--1-.gif)
 
 This hub-and-spoke architecture reduces the number of constraints to linear in the number of components.  Two-way template binding, the latest Right Way To Do Things, provides abstractions that reduce the boilerplate needed to implement this approach.  But, as React developer Pete Hunt [argues](http://youtu.be/x7cQ3mrcKaY), it hasn’t done so very well.  Since two-way template binding is a difficult problem to get right, each library invents its own ecosystem around the templating system, which is nearly impossible to extend and maintain long-term.
 
@@ -105,7 +105,7 @@ Om provides solutions to these problems.
 
 Om restores encapsulation and modularity using [cursors](https://github.com/swannodette/om/wiki/Cursors). Cursors provide update-able windows into particular portions of the application state (much like [zippers](http://richhickey.github.io/clojure/clojure.zip-api.html)), enabling components to take references to only the relevant portions of the global state, and update them in a *context-free* manner.
 
-![](/content/images/2014/Jun/Cursor-example.png)
+![]({{site.baseurl}}/content/images/2014/Jun/Cursor-example.png)
 
 To address the performance issue, Om leverages the power of ClojureScript and its persistent data structures.  Because the same immutable data structure always represents the same data, it’s very efficient to tell which parts of the global state have changed between render cycles using reference equality checks.  Om uses this ability to quickly identify the components that are possibly affected by a state change, and avoid invoking the virtual DOM diffing of React entirely for components that are unaffected. 
 
@@ -115,7 +115,7 @@ Users come to Prismatic to find and share content relevant to their interests.  
 
 In the steady state, this is simple to implement.  The backend sends down the list of topics that the user follows, and these are used to populate an interest list in the UI, as well as place a checkmark next to each followed topic tag on a story. For example, here is an image from the Urban Exploration feed. On the left is the view that the user sees if they are not following the Urban Exploration topic. When the user clicks on the “Follow” button under the feed header, however, this change must be propagated to the server, local state, and several places in the UI (highlighted with magenta arrows).
 
-![](/content/images/2014/Jun/follow_example_with_arrows.png)
+![]({{site.baseurl}}/content/images/2014/Jun/follow_example_with_arrows.png)
 
 In general, a user can follow or unfollow a topic from several components, and the updated state must be reflected in all the other components. Managing this complexity with Om is simple: each component receives a cursor to a canonical repository of topic follow information derived from the global state, and projects this information to the UI and/or modifies it as necessary.  Crucially, the component doing the modification doesn't need to know or care about about this process, but only concerns itself with its own encapsulated reference into the relevant parts of the global application state provided by cursors.  
 

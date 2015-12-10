@@ -30,9 +30,9 @@ The client application is the interface through which users access and update th
   		<th>Topics Lists</th>
 	</tr>
 	<tr>
-  		<td><img src="/content/images/2015/01/search-results.png"></td>
-        <td><img src="/content/images/2015/01/cats-topic-feed.png"></td>
-        <td><img src="/content/images/2015/01/topics-list.png"></td>
+  		<td><img src="{{site.baseurl}}/content/images/2015/01/search-results.png"></td>
+        <td><img src="{{site.baseurl}}/content/images/2015/01/cats-topic-feed.png"></td>
+        <td><img src="{{site.baseurl}}/content/images/2015/01/topics-list.png"></td>
 	</tr>
 </table>
 
@@ -97,7 +97,7 @@ Keeping the cached state within a separate singleton class works harmoniously wi
   		<th>Android Activity Lifecycle</th>
 	</tr>
 	<tr>
-  		<td><img src="/content/images/2015/01/activity-lifecycle-1.png"></td>
+  		<td><img src="{{site.baseurl}}/content/images/2015/01/activity-lifecycle-1.png"></td>
 	</tr>
 </table>
 

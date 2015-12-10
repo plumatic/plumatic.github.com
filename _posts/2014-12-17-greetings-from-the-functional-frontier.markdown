@@ -32,7 +32,7 @@ Part III: Richard Feldman
 
 Oh yeah: we also had these sweet 8-bit tshirts designed by Carolyn Li-Madeo, and modeled by Lucy:
 
-![](/content/images/2014/12/lucyFFF.jpg)
+![]({{site.baseurl}}/content/images/2014/12/lucyFFF.jpg)
 
 which were unimprovable, except perhaps with one clever addition (next time, Bill!)
 

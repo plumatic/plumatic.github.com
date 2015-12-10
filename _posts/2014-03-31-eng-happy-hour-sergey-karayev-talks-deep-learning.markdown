@@ -9,7 +9,7 @@ Sergey is a PhD candidate in CS at UC Berkeley, and works on artificial intellig
 
 His talk was really cool, and opened up a lot of questions from the team about what deep learning really means, and whether guess and check is a valid scientific method. We got a lot of requests from those who couldn’t make it to post slides, so [here](https://dl.dropboxusercontent.com/u/44891/research/computer_vision_and_deep_learning_feb_2014_at_prismatic.pdf) they are.  
 
-![](/content/images/2014/Mar/Screenshot-2014-03-31-14-52-17.png)
+![]({{site.baseurl}}/content/images/2014/Mar/Screenshot-2014-03-31-14-52-17.png)
 
 From his abstract:
 

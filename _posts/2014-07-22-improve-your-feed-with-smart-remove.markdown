@@ -13,16 +13,16 @@ Though we try really hard to pick out the best stories for you, chances are at s
 
 When you dislike a story, it will be removed from your feed, so you won’t have to look at it anymore. Then you have the option to fine-tune your feed by removing or blocking topics you don’t want to follow.
 
-![](/content/images/2014/Jul/BlockTopic-1.gif)
+![]({{site.baseurl}}/content/images/2014/Jul/BlockTopic-1.gif)
 
 You also have the option to report content as being explicit, or let us know if the story was tagged in the wrong topic. If there’s some other reason you want it removed, check “other” and let us know.
 
-![](/content/images/2014/Jul/reportcontent4-1.gif)
+![]({{site.baseurl}}/content/images/2014/Jul/reportcontent4-1.gif)
 
 Check out what’s new in your feed, and if you see something you don’t like, tell us why!
 
 <center>
-<a href="http://www.getprismatic.com/">![alt text](/content/images/2014/Jul/footer-cta-1.png)</a>
+<a href="http://www.getprismatic.com/">![alt text]({{site.baseurl}}/content/images/2014/Jul/footer-cta-1.png)</a>
 </center
 
 <hr>

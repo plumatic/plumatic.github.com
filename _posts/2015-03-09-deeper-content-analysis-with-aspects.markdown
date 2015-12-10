@@ -19,7 +19,7 @@ These areas are just a few examples demonstrating the structural variety in cont
           <th>Interest Graph</th>
     </tr>
     <tr>
-          <td><img src="/content/images/2015/03/image_0.png"></td>
+          <td><img src="{{site.baseurl}}/content/images/2015/03/image_0.png"></td>
     </tr>
 </table>
 
@@ -31,7 +31,7 @@ Our existing API automatically tags text or URLs with *topics* that capture them
 
 As an example, the following two articles are about different topics, but share the same structural aspect; they are both product *Review*s.
 
-![](/content/images/2015/03/Screen-Shot-2015-03-10-at-10-00-24-PM.png)
+![]({{site.baseurl}}/content/images/2015/03/Screen-Shot-2015-03-10-at-10-00-24-PM.png)
 
 <table>
 
@@ -79,7 +79,7 @@ The Aspect Hierarchy organizes the web into a taxonomy of classes. It is structu
 
 Here is a diagram of the aspects we’re releasing today.
 
-![image alt text](/content/images/2015/03/image_1.png)
+![image alt text]({{site.baseurl}}/content/images/2015/03/image_1.png)
 
 Each oval represents a class of webpages, and each diamond is an attribute that
 further partitions the webpages of its parent into mutually exclusive
@@ -229,7 +229,7 @@ Here is an example JSON response from the aspect endpoint:
           <th>JSON response</th>
     </tr>
     <tr>
-          <td><img src="/content/images/2015/03/image_2.png"></td>
+          <td><img src="{{site.baseurl}}/content/images/2015/03/image_2.png"></td>
     </tr>
 </table>
 
