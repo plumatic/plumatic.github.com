@@ -10,7 +10,7 @@ url: "http://github.com/prismatic/"
 #twitter_username: jekyllrb
 #github_username:  jekyll
 #
-permalink: short-urls-jekyll
+permalink: /blog/:title
 
 # Build settings
 markdown: kramdown
