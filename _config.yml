@@ -9,6 +9,8 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog/
 url: "http://github.com/prismatic/"
 #twitter_username: jekyllrb
 #github_username:  jekyll
+#
+permalink: short-urls-jekyll
 
 # Build settings
 markdown: kramdown
