@@ -4,7 +4,7 @@ title: 'Om sweet Om: (high-)functional frontend engineering with ClojureScript a
   React'
 date: 2014-06-17 09:56:09.000000000 -07:00
 ---
-At Prismatic, we're firm believers that great products come from a marriage of thoughtful design with rigorous engineering.  [Effective design](http://blog.getprismatic.com/making-good-design-decisions/) requires making educated guesses about what works, building out solutions to test these hypotheses quickly, and iterating based on the results.  For example, if you’ve read about our recent [feed redesign](http://blog.getprismatic.com/list-beats-grid-linear-feeds-perform-two-to-three-times-better-than-grids-2/), then you know that we tested three very different feed layouts in the past year before landing on a design that we and most of our users are quite happy with.
+We're firm believers that great products come from a marriage of thoughtful design with rigorous engineering.  Effective design requires making educated guesses about what works, building out solutions to test these hypotheses quickly, and iterating based on the results.  For example, if you’ve read about our recent feed redesign, then you know that we tested three very different feed layouts in the past year before landing on a design that we and most of our users are quite happy with.
 
 Constant experimentation and iteration presents us with an interesting technical challenge: creating a frontend architecture that allows us to build and test designs quickly, while maintaining acceptable performance for our users.  
 
@@ -14,7 +14,7 @@ Specifically, (like most software engineering teams) our primary engineering goa
  * is simple and readable; and
  * has as few bugs as possible.
 
-In our experience developing web, iOS, and backend applications, we’ve found that much (if not most) coupling, complexity, and bugs are a direct result of managing changes to application state.  With [ClojureScript](https://github.com/clojure/clojurescript) and [Om](https://github.com/swannodette/om) (a ClojureScript interface to [React](http://facebook.github.io/react/)), we’ve finally found an architecture that shoulders most of this burden for us on the web.  Two months ago, we rewrote our [webapp](http://getprismatic.com/topic/Programming) in this architecture, and it’s been a huge boost to our productivity while maintaining snappy runtime performance.
+In our experience developing web, iOS, and backend applications, we’ve found that much (if not most) coupling, complexity, and bugs are a direct result of managing changes to application state.  With [ClojureScript](https://github.com/clojure/clojurescript) and [Om](https://github.com/swannodette/om) (a ClojureScript interface to [React](http://facebook.github.io/react/)), we’ve finally found an architecture that shoulders most of this burden for us on the web.  Two months ago, we rewrote our webapp in this architecture, and it’s been a huge boost to our productivity while maintaining snappy runtime performance.
 
 ![]({{site.baseurl}}/content/images/2014/Jun/Slice-1.png)
 
@@ -25,7 +25,7 @@ Read on for more details about how we’ve been iterating faster with ClojureScr
 
 ## ClojureScript
 
-Prismatic's backend is built with [Clojure](http://clojure.org/), a beautifully-designed, modern Lisp dialect running on the JVM, which we find to be an incredibly powerful language for real-world software engineering.  Clojure has excellent support for functional, data-oriented programming with efficient immutable data structures at its core.  It is also highly expressive, supporting powerful [fine-grained, composable abstractions](http://blog.getprismatic.com/software-engineering-at-prismatic/), and nearly infinite extensibility via tasteful use of macros.
+Our backend is built with [Clojure](http://clojure.org/), a beautifully-designed, modern Lisp dialect running on the JVM, which we find to be an incredibly powerful language for real-world software engineering.  Clojure has excellent support for functional, data-oriented programming with efficient immutable data structures at its core.  It is also highly expressive, supporting powerful fine-grained, composable abstractions, and nearly infinite extensibility via tasteful use of macros.
     
 Given our love of Clojure, we were ecstatic about the introduction of [ClojureScript](https://github.com/clojure/clojurescript), a Clojure dialect that compiles to JavaScript, and brings the benefits of Clojure to the web.  ClojureScript also achieves the same high performance as Clojure by relying on modern JavaScript engines coupled with the excellent [Google Closure](https://developers.google.com/closure/) library. 
 
@@ -52,7 +52,7 @@ The threading macro allows us to write this sequence of operations in a more rea
 <script src="https://gist.github.com/davegolland/dd47281d1ef1e4a10f3b.js"></script>
 
 Another, more sophisticated example is [`core.async`](https://github.com/clojure/core.async), a library that uses macros to bring goroutines and channels (in the spirit of Google’s Go programming language) to ClojureScript.  Goroutines are a very natural way to express asynchronous communication patterns -- which tend to arise frequently in web development -- in a synchronous style (as straight-line code, without callbacks).  Typically, support for this programming style must be baked into the compiler of a programming language, 
-but macros effectively allow you to extend the language so goroutines can be provided a'la carte as a lightweight library. We've also created a number of our own libraries that use macros to add new syntax to ClojureScript, including [Plumbing](https://github.com/Prismatic/plumbing),  [Schema](https://github.com/Prismatic/schema), and [om-tools](https://github.com/Prismatic/om-tools).
+but macros effectively allow you to extend the language so goroutines can be provided a'la carte as a lightweight library. We've also created a number of our own libraries that use macros to add new syntax to ClojureScript, including [Plumbing](https://github.com/plumatic/plumbing),  [Schema](https://github.com/plumatic/schema), and [om-tools](https://github.com/plumatic/om-tools).
 
  
 ## React 
@@ -111,7 +111,7 @@ To address the performance issue, Om leverages the power of ClojureScript and it
 
 ### An Example
 
-Users come to Prismatic to find and share content relevant to their interests.  They find this content in *feeds*, which are ordered collections of *stories*, each of which is automatically tagged with a set of relevant *topics*.  Users can *follow* a topic to indicate their interest, and see more stories about it later. 
+Users come to our site to find and share content relevant to their interests.  They find this content in *feeds*, which are ordered collections of *stories*, each of which is automatically tagged with a set of relevant *topics*.  Users can *follow* a topic to indicate their interest, and see more stories about it later. 
 
 In the steady state, this is simple to implement.  The backend sends down the list of topics that the user follows, and these are used to populate an interest list in the UI, as well as place a checkmark next to each followed topic tag on a story. For example, here is an image from the Urban Exploration feed. On the left is the view that the user sees if they are not following the Urban Exploration topic. When the user clicks on the “Follow” button under the feed header, however, this change must be propagated to the server, local state, and several places in the UI (highlighted with magenta arrows).
 
@@ -129,23 +129,4 @@ This stack enables us to use functional programming concepts to write code that 
 
 <hr style="border-top: 1px solid #ccc">
 This post has just scratched the surface of what's possible; subscribe to be notified of follow-up posts, including more details of how to use Om, share code between client and server with `cljx`, generate responsive CSS using Garden, and more. 
-
-<!-- Begin MailChimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-<form action="http://getprismatic.us8.list-manage2.com/subscribe/post?u=48f886b5d37625b7ce4f1c568&amp;id=a81a653780" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" style="padding-left:0;" novalidate>
-	
-	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;"><input type="text" name="b_48f886b5d37625b7ce4f1c568_a81a653780" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-</form>
-</div>
-
-<!--End mc_embed_signup-->
 

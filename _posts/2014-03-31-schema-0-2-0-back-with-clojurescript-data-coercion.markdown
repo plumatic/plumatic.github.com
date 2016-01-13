@@ -3,11 +3,11 @@ layout: post
 title: 'Schema 0.2.0: back with Clojure(Script) data coercion'
 date: 2014-03-31 14:56:52.000000000 -07:00
 ---
-*tl;dr: [Schema](https://github.com/prismatic/schema) 0.2.0 is here, adding support for data coercion and 5x faster validation.  We've also added Schema support in [Plumbing and Graph 0.2.0](https://github.com/prismatic/plumbing). Join the discussion on Hacker News and let us know what you think.*
+*tl;dr: [Schema](https://github.com/plumatic/schema) 0.2.0 is here, adding support for data coercion and 5x faster validation.  We've also added Schema support in [Plumbing and Graph 0.2.0](https://github.com/plumatic/plumbing). Join the discussion on Hacker News and let us know what you think.*
 
-Back in September, Prismatic [released](http://blog.getprismatic.com/blog/2013/9/4/schema-for-clojurescript-data-shape-declaration-and-validation) the first version of [Schema](https://github.com/prismatic/schema), and we've been blown away by the interest and contributions from the community since.  Schemas are declarative descriptions of data shapes that make it easy to document and validate Clojure(Script) data. We use Schemas all over our codebase, and others seem to share our finding that Schemas can make Clojure development clearer, faster, and more fun.
+Back in September, we [released](http://plumatic.github.io/schema-for-clojurescript-data-shape-declaration-and-validation/) the first version of [Schema](https://github.com/plumatic/schema), and we've been blown away by the interest and contributions from the community since.  Schemas are declarative descriptions of data shapes that make it easy to document and validate Clojure(Script) data. We use Schemas all over our codebase, and others seem to share our finding that Schemas can make Clojure development clearer, faster, and more fun.
 
-In addition to a variety of small bugfixes, improvements, and a huge performance boost (see the [Changelog](https://github.com/Prismatic/schema/blob/master/CHANGELOG.md)), version 0.2.0 brings something new to the party: **transformations**, which provide a way to perform structured manipulation of data using rules cued by Schemas.
+In addition to a variety of small bugfixes, improvements, and a huge performance boost (see the [Changelog](https://github.com/plumatic/schema/blob/master/CHANGELOG.md)), version 0.2.0 brings something new to the party: **transformations**, which provide a way to perform structured manipulation of data using rules cued by Schemas.
 
 ## Why Transformations?
 
@@ -25,7 +25,7 @@ Spending time writing the boilerplate conversions became exceedingly inefficient
 
 And the fun doesn't stop at coercion.  Schema is now based on a general `walker` protocol that allows for structured Schema-driven data transformations, of which validation and input coercion are just two simple examples.  This abstraction is inspired by the excellent data transformation facilities of `clojure.walk`; the difference is that whereas `clojure.walk` operates on free-form data, `schema/walker` allows you to define transformations that depend on *both* the Schema and data at a particular place in a data structure via a parallel walk.  To `clojure.walk` a String is just a String; but `schema/walker` knows whether this string is *supposed to be* a String, Keyword, Number, or FooBar, and can act accordingly.
 
-It's easy to write your own [custom transformations](https://github.com/Prismatic/schema/wiki/Writing-Custom-Transformations). We're excited to see what other applications for transformation the community dreams up!
+It's easy to write your own [custom transformations](https://github.com/plumatic/schema/wiki/Writing-Custom-Transformations). We're excited to see what other applications for transformation the community dreams up!
 
 ## Show Me The Code
 
@@ -33,9 +33,9 @@ The rest of this post describes this new functionality in more detail, with exam
 
 <script src="https://gist.github.com/w01fe/8246933.js"></script>
 
-`CommentRequest` is a schema for data a client might send to the [Prismatic](http://preview.getprismatic.com/news/home) API to post a comment and share it to the provided external networks.  The `parent-comment-id` field is optional, and is only present if the comment is a reply.
+`CommentRequest` is a schema for data a client might send to the API to post a comment and share it to the provided external networks.  The `parent-comment-id` field is optional, and is only present if the comment is a reply.
 
-`+good-request+` matches the schema and passes validation, but `+bad-request+` has several issues that are clearly explained in the validation exception.  (For more Schema examples, check out the [readme](https://github.com/prismatic/schema).)  
+`+good-request+` matches the schema and passes validation, but `+bad-request+` has several issues that are clearly explained in the validation exception.  (For more Schema examples, check out the [readme](https://github.com/plumatic/schema).)  
 
 ### Coercion
 
@@ -99,11 +99,11 @@ The first change enables applications like transformation, which require the abi
 
 ## Conclusion 
 
-We've released the latest version of [Schema](https://github.com/prismatic/schema), which is both 5x faster and adds a generic facility for parallel schema-data walks.  Schema ships with an application of this facility for *coercion*, which Prismatic is using in production to automatically massage input data into a suitable form, and transparently clientize output data.  
+We've released the latest version of [Schema](https://github.com/plumatic/schema), which is both 5x faster and adds a generic facility for parallel schema-data walks.  Schema ships with an application of this facility for *coercion*, which we are using in production to automatically massage input data into a suitable form, and transparently clientize output data.  
 
 This application is another step towards meeting Schema's design goal: enabling a single declarative definition of your data's shape that drives everything you want to do with your data, without writing a single line of traversal code.  Validation and coercion are just the first two applications, with others like test data generation just around the corner.  
 
-In other open-source news, we're also excited to announce the `0.2.0` release of [Plumbing](https://github.com/prismatic/plumbing), which makes Graph, `fnk`, and friends Schema-friendly. Be on the lookout for more releases on the horizon, including our API definition library with validation and pluggable coercion included.  
+In other open-source news, we're also excited to announce the `0.2.0` release of [Plumbing](https://github.com/plumatic/plumbing), which makes Graph, `fnk`, and friends Schema-friendly. Be on the lookout for more releases on the horizon, including our API definition library with validation and pluggable coercion included.  
 
 Join the discussion on Hacker News and let us know what you think.
  

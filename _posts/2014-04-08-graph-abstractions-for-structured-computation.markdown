@@ -21,9 +21,9 @@ Once an engineer comes to grok FP,  they tend to organize code around how data '
 Introducing Graph
 ---
 
-Last week, we open-sourced Graph as part of our [plumbing](https://github.com/Prismatic/plumbing) library. Graph is a very simple, declarative way to describe how data flows between functions in an FP program.  It allows us to formalize the informal structure of good FP code, and enables *higher-order* abstractions over these structures that can help stamp out many persistent forms of complexity overhead.
+Last week, we open-sourced Graph as part of our [plumbing](https://github.com/plumatic/plumbing) library. Graph is a very simple, declarative way to describe how data flows between functions in an FP program.  It allows us to formalize the informal structure of good FP code, and enables *higher-order* abstractions over these structures that can help stamp out many persistent forms of complexity overhead.
 
-Concretely, a Graph represents the structured composition of any number of functions, using a Clojure map.  Each entry in a Graph is a mapping from a node name (keyword) to a keyword function, which computes the value of its node from the values of other nodes and inputs from outside the Graph.  The [plumbing readme](https://github.com/Prismatic/plumbing) provides some simple examples of what Graph can do, and [this test](https://github.com/Prismatic/plumbing/blob/master/test/plumbing/graph_examples_test.clj) goes into more gory details on how to use Graph.
+Concretely, a Graph represents the structured composition of any number of functions, using a Clojure map.  Each entry in a Graph is a mapping from a node name (keyword) to a keyword function, which computes the value of its node from the values of other nodes and inputs from outside the Graph.  The [plumbing readme](https://github.com/plumatic/plumbing) provides some simple examples of what Graph can do, and [this test](https://github.com/plumatic/plumbing/blob/master/test/plumbing/graph_examples_test.clj) goes into more gory details on how to use Graph.
 
 In this post, we want to focus more on how Graph can be used to reduce complexity overhead in large, real-world, FP systems, and thus allow us to design simpler and more maintainable code with less work.  First, however, we want to say a few words about what Graph is **not**.  
 
@@ -31,7 +31,7 @@ In this post, we want to focus more on how Graph can be used to reduce complexit
 
  - Graph is **not** a distributed computation framework.  In fact, it says *nothing* at all about how or where the node functions should be executed, but just describes how data flows from one function to another.  This is actually a *strength* -- as we will see, the ability to compose a Graph with various execution strategies helps us reduce complexity overhead -- and distributed computation strategies are just one option that we will pursue in future releases.
 
-Jason Wolfe's [Strange Loop talk](http://www.infoq.com/presentations/Graph-Clojure-Prismatic), [slides](https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Wolfe-Graph.pdf?raw=true) and subsequent [blog post](http://blog.getprismatic.com/blog/2012/10/1/prismatics-graph-at-strange-loop) last year covered two concrete real-world examples of Graph from our codebase: composing production services, and generating personalized newsfeeds in real time.
+Jason Wolfe's [Strange Loop talk](http://www.infoq.com/presentations/Graph-Clojure-Prismatic), [slides](https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Wolfe-Graph.pdf?raw=true) and subsequent [blog post](http://plumatic.github.io/prismatics-graph-at-strange-loop/) last year covered two concrete real-world examples of Graph from our codebase: composing production services, and generating personalized newsfeeds in real time.
 
 ![]({{site.baseurl}}/content/images/2014/10/graph_ugly_graphs-1.png)
 
@@ -45,7 +45,7 @@ We'll be discussing these applications more in later posts, once we get a chance
 
 ### The doc Graph
 
-<img src="https://raw.github.com/wiki/prismatic/plumbing/images/doc_graph.png" alt="(Portion of) Doc Graph" style="display:block; margin-left:auto; margin-right: auto;">
+<img src="https://raw.github.com/wiki/plumatic/plumbing/images/doc_graph.png" alt="(Portion of) Doc Graph" style="display:block; margin-left:auto; margin-right: auto;">
 
 <!--![(Portion of) Doc Graph](https://raw.github.com/wiki/prismatic/plumbing/images/doc_graph.png)-->
 
@@ -78,7 +78,7 @@ The doc Graph sidesteps all of this complexity overhead, simply stating *what* t
 
 ### Supporting related use cases
 
-Sometimes we want to run different variants or subsets of a general type of computation.  For instance, when a new user joins Prismatic, we generate topic suggestions from Twitter shares by extracting topics from linked URLs.  This is the same complex computation carried out by *a portion of* our normal document processing pipeline, but in this case we don't care about other steps such as extracting the best image.   These topic suggestions must be *fast* -- we need to run them over hundreds of URLs in just seconds --- so we'd like to avoid doing any unnecessary work (e.g., image extraction and thumbnail generation).  But manually refactoring a hand-written `url->doc` function to support this `url->topics` and related use-cases would lead to a huge mess of complexity overhead (often involving a copy-paste job).  
+Sometimes we want to run different variants or subsets of a general type of computation.  For instance, when a new user joins, we generate topic suggestions from Twitter shares by extracting topics from linked URLs.  This is the same complex computation carried out by *a portion of* our normal document processing pipeline, but in this case we don't care about other steps such as extracting the best image.   These topic suggestions must be *fast* -- we need to run them over hundreds of URLs in just seconds --- so we'd like to avoid doing any unnecessary work (e.g., image extraction and thumbnail generation).  But manually refactoring a hand-written `url->doc` function to support this `url->topics` and related use-cases would lead to a huge mess of complexity overhead (often involving a copy-paste job).  
 
 With Graph, however, we get such related uses cases for free.  Since a Graph only describes the structure of a computation without committing to unnecessary details about which steps are actually executed and when, it's trivial to just run a portion of a Graph (e.g., `topics` and its ancestors) and skip the rest of the nodes.  We can also just use the built-in `graph/lazy-compile` compiler to generate a version of `url->doc` that returns a doc where fields are computed on demand, and unused results have almost no additional cost.  
 
@@ -93,7 +93,7 @@ Similarly, higher-order operations on Graphs make it easy to modify, extend, com
 Graph and beyond
 ---
 
-We hope you'll go check out [Graph](https://github.com/Prismatic/plumbing), and let us know what you think.  While you're browsing the code, we also recommend checking out some other supporting namespaces in the project, especially [plumbing.core](https://github.com/Prismatic/plumbing/blob/master/src/plumbing/core.clj) which is a library of our very favorite Clojure utility functions.  We'd love to hear comments, suggestions, and details about use cases you dream up.
+We hope you'll go check out [Graph](https://github.com/plumatic/plumbing), and let us know what you think.  While you're browsing the code, we also recommend checking out some other supporting namespaces in the project, especially [plumbing.core](https://github.com/plumatic/plumbing/blob/master/src/plumbing/core.clj) which is a library of our very favorite Clojure utility functions.  We'd love to hear comments, suggestions, and details about use cases you dream up.
 
 Please let us know what you think in the [Hacker News](http://news.ycombinator.com/item?id=5183236) thread.    
 

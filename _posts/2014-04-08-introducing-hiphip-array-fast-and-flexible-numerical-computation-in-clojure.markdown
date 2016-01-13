@@ -8,11 +8,11 @@ Join [the discussion](https://news.ycombinator.com/item?id=6021053) on HackerNew
 _This post and work on HipHip are done in part by [Leon
 Barrett](http://leon.barrettnexus.com/), who is visiting on a 'sprintbatical' from fellow Clojure shop [The Climate Corporation](http://climate.com/), and [Emil Flakk](http://flakk.me). This post is cross-posted to [The Climate Corporation's blog](http://eng.climate.com/2013/07/10/introducing-hiphip-array-fast-and-flexible-numerical-computation-in-clojure/)._
 
-Prismatic and Climate Corp. share the unique challenge of developing new algorithms and making them work at a large scale. This combination of research and engineering takes many cycles of algorithm and model design, including rapid implementation to test on lots of real data. In contrast to most engineering prototyping,  such numeric modeling demands high performance out of the gate, since correctness cannot be judged on just a little bit of data. In this post, we introduce our open-source array processing library [HipHip](https://github.com/prismatic/hiphip), which combines Clojure's expressiveness with the fastest math Java has to offer. 
+Climate Corp. shares the unique challenge of developing new algorithms and making them work at a large scale. This combination of research and engineering takes many cycles of algorithm and model design, including rapid implementation to test on lots of real data. In contrast to most engineering prototyping,  such numeric modeling demands high performance out of the gate, since correctness cannot be judged on just a little bit of data. In this post, we introduce our open-source array processing library [HipHip](https://github.com/plumatic/hiphip), which combines Clojure's expressiveness with the fastest math Java has to offer. 
 
 # Computational Functional Programming
 
-As we've outlined in [several](http://blog.getprismatic.com/blog/2012/4/5/software-engineering-at-prismatic.html) [past](http://blog.getprismatic.com/blog/2013/2/1/graph-abstractions-for-structured-computation) [posts](http://blog.getprismatic.com/blog/2013/4/29/faster-better-dom-manipulation-with-dommy-and-clojurescript), Prismatic loves Clojure (and [functional programming](https://en.wikipedia.org/wiki/Functional_programming) generally) because it allows us to quickly build performant and reusable tools. However, many of the data abstractions that make Clojure code so reusable don't yield fast numerical computation. For instance, consider the [dot product](http://en.wikipedia.org/wiki/Dot_product) operation, which is the core performance bottleneck in most machine learning algorithms. Using Clojure's built-in sequence operations, it would be natural to write the dense dot product as:
+As we've outlined in [past blog posts](http://plumatic.github.io/graph-abstractions-for-structured-computation/), we love Clojure (and [functional programming](https://en.wikipedia.org/wiki/Functional_programming) generally) because it allows us to quickly build performant and reusable tools. However, many of the data abstractions that make Clojure code so reusable don't yield fast numerical computation. For instance, consider the [dot product](http://en.wikipedia.org/wiki/Dot_product) operation, which is the core performance bottleneck in most machine learning algorithms. Using Clojure's built-in sequence operations, it would be natural to write the dense dot product as:
 
 <script src="https://gist.github.com/w01fe/5963969.js"></script>
 <img src="http://i.qkme.me/3v3uat.jpg" style="display:block; margin-left:auto; margin-right: auto;"></img>
@@ -47,7 +47,7 @@ The problem is that for computational systems, there typically isn't a single bo
 <img src="http://i.qkme.me/3v4p30.jpg" style="display:block; margin-left:auto; margin-right: auto;"></img>
 
 
-We're happy to announce [HipHip](https://github.com/prismatic/hiphip), a Clojure array-processing library. Here's what a dot product looks like in HipHip:
+We're happy to announce [HipHip](https://github.com/plumatic/hiphip), a Clojure array-processing library. Here's what a dot product looks like in HipHip:
 
 <script src="https://gist.github.com/w01fe/5963993.js"></script>
 
@@ -82,5 +82,5 @@ in the same operation:
 
 HipHip uses [Criterium](https://github.com/hugoduncan/criterium) for benchmarking, and runs benchmarks as tests, so we can be pretty confident that most of our double array operations run 0-50% slower than Java (but we're not quite there for other array types yet, see the 'Known Issues' section of the readme for details).  The readme also describes a critical option for fast array math if you're running under Leiningen.
 
-[Check it out](http://www.github.com/prismatic/hiphip) and let us know what you think in the [Hacker News](https://news.ycombinator.com/item?id=6021053) thread.
+[Check it out](http://www.github.com/plumatic/hiphip) and let us know what you think in the [Hacker News](https://news.ycombinator.com/item?id=6021053) thread.
  

@@ -3,7 +3,7 @@ layout: post
 title: 'The Magic of Macros: Lighting-Fast Templating in ClojureScript'
 date: 2014-04-08 12:12:02.000000000 -07:00
 ---
-Last week, we [wrote](http://blog.getprismatic.com/blog/2013/1/14/bringing-functional-to-the-frontend-clojure-clojurescript-for-the-web) about transitioning our web application from Javascript to Clojure and ClojureScript. In that post, we introduced, [dommy](http://github.com/prismatic/dommy), a ClojureScript DOM templating library which expresses DOM structure using  nested Clojure data structures. Here's a simple example:
+Last week, we [wrote](http://plumatic.github.io//bringing-functional-to-the-frontend-clojure-clojurescript-for-the-web) about transitioning our web application from Javascript to Clojure and ClojureScript. In that post, we introduced, [dommy](http://github.com/plumatic/dommy), a ClojureScript DOM templating library which expresses DOM structure using  nested Clojure data structures. Here's a simple example:
 
 
 <script src="https://gist.github.com/4527612.js"></script>
@@ -14,17 +14,17 @@ which is over **468% faster** than before and over **300%** faster than our proc
 
 <script src="https://gist.github.com/999d4e393d612b4fbfd4.js"></script>
 
-Here are the performance numbers using the same [performance test](https://github.com/Prismatic/dommy/blob/master/test/dommy/template_perf_test.cljs) from our last post:
+Here are the performance numbers using the same [performance test](https://github.com/plumatic/dommy/blob/master/test/dommy/template_perf_test.cljs) from our last post:
 
 **[jQuery](http://jquery.com/)**: 1.57 secs 
 
-**[dommy](https://github.com/prismatic/dommy)**: 2.06 secs 
+**[dommy](https://github.com/plumatic/dommy)**: 2.06 secs 
 
 **[crate](https://github.com/ibdknox/crate)**: 6.97 secs 
 
-**[dommy-macro](https://github.com/Prismatic/dommy/blob/master/src/dommy/template_compile.clj)**: 0.44 secs
+**[dommy-macro](https://github.com/plumatic/dommy/blob/master/src/dommy/template_compile.clj)**: 0.44 secs
 
-Here, dommy-macro is using our new macro compilation. The Clojure code for dommy macros can be found [here](https://github.com/Prismatic/dommy/blob/master/src/dommy/template_compile.clj) in one small file. Dommy without macros is about 10% better than the number we reported in our previous post thanks to some [great](https://github.com/Prismatic/dommy/commit/8a3d6094c56a9a1b4644fac846be09f98f84c3dd) [commits](https://github.com/Prismatic/dommy/commit/16f285bacaf96a7ffbcb8c31d3375adf69788399) from the GitHub community. 
+Here, dommy-macro is using our new macro compilation. The Clojure code for dommy macros can be found [here](https://github.com/plumatic/dommy/blob/master/src/dommy/template_compile.clj) in one small file. Dommy without macros is about 10% better than the number we reported in our previous post thanks to some [great](https://github.com/plumatic/dommy/commit/8a3d6094c56a9a1b4644fac846be09f98f84c3dd) [commits](https://github.com/plumatic/dommy/commit/16f285bacaf96a7ffbcb8c31d3375adf69788399) from the GitHub community. 
 
 The rest of this post will explain ClojureScript macros (and macros more broadly) and how we used them to do most of the templating work at compilation time.
 
@@ -75,6 +75,5 @@ Obviously, the above macro doesn't handle many cases like the CSS-style element 
 
 Macros are surprisingly powerful when used in the right way. They can transform succinct ClojureScript template code into highly efficient JavaScript, yielding much faster performance than popular native JS frameworks (like jQuery). In a future post, we'll talk about our flop Clojure library, which uses macros to express floating point operations over arrays. This lets us do extremely fast array math which is performant but still maintains Clojure's succinctness. There are plenty of other great related macro applications including DOM selection and manipulation, but we'll save that for a future post. 
 
-If you're interested in using Clojure and ClojureScript full-time, why not [apply for a job](http://getprismatic.com/jobs) at Prismatic.
 
 

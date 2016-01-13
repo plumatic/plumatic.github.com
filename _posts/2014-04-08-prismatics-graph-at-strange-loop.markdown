@@ -3,13 +3,11 @@ layout: post
 title: Prismatic's "Graph" at Strange Loop
 date: 2014-04-08 12:14:53.000000000 -07:00
 ---
-At last month's [Strange Loop][sl] conference, I gave a talk about "Graph", a library developed at Prismatic to simplify some of our complex software systems.  This post will briefly summarize the main ideas behind Graph; if you're left wanting more, the talk [slides][slides] go into considerably more detail, including real-world examples, and we'll be answering questions in the [Hacker News thread][hn].
-
-And if you're exited about working with us to release some great (soon to be) open source Clojure libraries like Graph, please ping us -- we're [hiring][hiring]!  
+At last month's [Strange Loop][sl] conference, I gave a talk about "Graph", a library developed to simplify some of our complex software systems.  This post will briefly summarize the main ideas behind Graph; if you're left wanting more, the talk [slides][slides] go into considerably more detail, including real-world examples, and we'll be answering questions in the [Hacker News thread][hn].
 
 ## Motivation
 
-Software engineering is very important to us at Prismatic.  We've written about our fondness for [fine-grained, composable abstractions (FCAs)][swe].  However, in a number of our real systems, we've relentessly refactored and modularized according to these principles, but still found ourselves left with complex top-level compositions like these:   
+Software engineering is very important to us.  We've written about our fondness for fine-grained, composable abstractions (FCAs).  However, in a number of our real systems, we've relentessly refactored and modularized according to these principles, but still found ourselves left with complex top-level compositions like these:   
 
 ![]({{site.baseurl}}/content/images/2014/10/graph_ugly_graphs.png)
 
@@ -130,16 +128,14 @@ For production services, similar patterns enable us to cleanly shutdown an entir
 
 This post has just scratched the surface of what's possible by using a simple, declarative abstraction like Graph to express the compositional structure of real software systems.
 
-At the end of the Strange Loop talk, I mentioned the possibility of open sourcing Graph, and received an unexpectedly very positive response.  We're really excited about this possibility, and hope to make an alpha version available in the coming weeks.  We've also developed many other libraries here at Prismatic that we're excited about releasing to the community,  so stay tuned!
+At the end of the Strange Loop talk, I mentioned the possibility of open sourcing Graph, and received an unexpectedly very positive response.  We're really excited about this possibility, and hope to make an alpha version available in the coming weeks.  We've also developed many other libraries here that we're excited about releasing to the community,  so stay tuned!
 
 Please let us know what you think in the [Hacker News comments][hn].
 
-[swe]: http://blog.getprismatic.com/blog/2012/4/5/software-engineering-at-prismatic.html
 [sl]: https://thestrangeloop.com/
 [me]: http://twitter.com/w01fe
 [allslides]: https://github.com/strangeloop/strangeloop2012/tree/master/slides
 [slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Wolfe-Graph.pdf?raw=true
 [react]: https://github.com/jeffbski/react
 [lazymap]: https://bitbucket.org/kotarak/lazymap
-[hiring]: http://getprismatic.com/people
 [hn]: http://news.ycombinator.com/item?id=4641465

@@ -3,7 +3,7 @@ layout: post
 title: Schema for Clojure(Script) Data Shape Declaration and Validation
 date: 2014-04-08 11:47:56.000000000 -07:00
 ---
-<p><strong>tl;dr:</strong> <em>We open-sourced <a href="http://github.com/prismatic/schema">Schema</a> to get many of the benefits of type systems in Clojure with less hassle. In the future, we will use Schema declarations to do awesome things like auto-generate Objective-C classes (take a <a href="https://github.com/Prismatic/schema/blob/d82bf0b049fc1205a81a79d88a84872bb9f9846b/src/clj/client/objc.clj">peek</a>). Join <a href="https://news.ycombinator.com/item?id=6334865">the discussion</a> on Hacker News and tell us what you think</em></p>
+<p><strong>tl;dr:</strong> <em>We open-sourced <a href="http://github.com/plumatic/schema">Schema</a> to get many of the benefits of type systems in Clojure with less hassle. In the future, we will use Schema declarations to do awesome things like auto-generate Objective-C classes (take a <a href="https://github.com/plumatic/schema/blob/d82bf0b049fc1205a81a79d88a84872bb9f9846b/src/clj/client/objc.clj">peek</a>). Join <a href="https://news.ycombinator.com/item?id=6334865">the discussion</a> on Hacker News and tell us what you think</em></p>
 
 <p>One of the touted benefits of functional programming is that it produces easier to understand and more reusable code. The reasoning behind this claim goes as follows: well-written functional code consists of many small <a href="http://en.wikipedia.org/wiki/Pure_function">pure functions</a>. Since these functions are free of side-effects, you only need to understand a function's input and outputs to understand its behavior. Unfortunately, understanding what a function does and its inputs and outputs can be a non-trivial task. For instance,</p>
 
@@ -46,9 +46,9 @@ date: 2014-04-08 11:47:56.000000000 -07:00
 
 <h2>Introducing Schema</h2>
 
-<p>At Prismatic, one of the issues we were running into with a large Clojure(Script) codebase was the ability to document the kind of data functions took and what they returned. Aside from documentation, when the contract of a function is broken at runtime Clojure often might not fail at all, and it's up to the developer to track a <code>nil</code> halfway through the codebase to find the root cause.</p>
+<p>One of the issues we were running into with a large Clojure(Script) codebase was the ability to document the kind of data functions took and what they returned. Aside from documentation, when the contract of a function is broken at runtime Clojure often might not fail at all, and it's up to the developer to track a <code>nil</code> halfway through the codebase to find the root cause.</p>
 
-<p>For these reasons, we built the <a href="http://github.com/prismatic/schema">Schema</a> library for declaring and validating data shapes. Schema isn't a full-blown type system, but a lightweight flexible DSL for describing data requirements, more approriate to how Clojure functions should delimit use. For example, our <code>with-full-name</code> example,  would be written as:</p>
+<p>For these reasons, we built the <a href="http://github.com/plumatic/schema">Schema</a> library for declaring and validating data shapes. Schema isn't a full-blown type system, but a lightweight flexible DSL for describing data requirements, more approriate to how Clojure functions should delimit use. For example, our <code>with-full-name</code> example,  would be written as:</p>
 
 <script src="https://gist.github.com/aria42/f4b91ea7fe49a2d23ce7.js"></script>
 
@@ -86,14 +86,14 @@ date: 2014-04-08 11:47:56.000000000 -07:00
 
 <h3>Sharing Schemas between Clojure and ClojureScript</h3>
 
-<p>The <a href="http://github.com/prismatic/schema">Schema</a> library supports both Clojure and ClojureScript.  While Schema supports platform-specific features (like primitives in the JVM or prototype chains on JS), many schemas can actually be shared as data between the two. For instance, backend and frontend can share a set of cross-platform schemas describing the API inputs and outputs.</p>
+<p>The <a href="http://github.com/plumatic/schema">Schema</a> library supports both Clojure and ClojureScript.  While Schema supports platform-specific features (like primitives in the JVM or prototype chains on JS), many schemas can actually be shared as data between the two. For instance, backend and frontend can share a set of cross-platform schemas describing the API inputs and outputs.</p>
 
 <h2>Conclusion and Future Work</h2>
 
 <p>We've found Schema to be a productivity win for our Clojure teams and a significant time-saver in tracking down runtime issues. We have many plans for broader use of Schema, including:</p>
 
 <ul>
-<li>Generating Objective-C domain classes from schemas (<a href="https://github.com/Prismatic/schema/blob/d82bf0b049fc1205a81a79d88a84872bb9f9846b/src/clj/client/objc.clj">check out</a>  a preview of this code)</li>
+<li>Generating Objective-C domain classes from schemas (<a href="https://github.com/plumatic/schema/blob/d82bf0b049fc1205a81a79d88a84872bb9f9846b/src/clj/client/objc.clj">check out</a>  a preview of this code)</li>
 <li>Generating <code>core.typed</code> form annotations from function schemas to get compile-time shape validation</li>
 <li>Generating <a href="http://avro.apache.org/">avro</a> specficiations from schemas</li>
 </ul>
